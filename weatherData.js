@@ -1,25 +1,12 @@
 import { fromUnixTime, format } from "date-fns";
 
-const getLocation = async function () {
-    let ipInfo = await fetch('http://ipinfo.io?token=4e729d8e8a3919', {mode: 'cors'});
-    let { city, region, country, loc } = await ipInfo.json();
-    return { 
-        city,
-        region,
-        country,
-        latitude: loc.substring(0, loc.indexOf(',')),
-        longitude: loc.substring(loc.indexOf(',') + 1),
-    };
-};
-
 const getWeatherData = async function (latitude, longitude) {
     let weatherInfo = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=4f54370f89e09a792c11550fa7f63031&units=imperial`, { mode: 'cors' });
-    weatherInfo = weatherInfo.json();
+    weatherInfo = await weatherInfo.json();
     return weatherInfo;
 };
 
-export default async function () {
-    const location = await getLocation();
+export default async function FormatweatherData (location) {
     const {
         weather: [ { description } ], 
         clouds: { all }, 
@@ -28,7 +15,7 @@ export default async function () {
         snow,
         sys: { sunrise, sunset },
         wind: { speed }, 
-    } = await getWeatherData(location.latitude, location.longitude);
+    } = await getWeatherData(location.lat, location.lon);
     return {
         location,
         weather: {
