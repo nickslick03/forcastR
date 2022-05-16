@@ -1,3 +1,8 @@
 import weatherData from "./weatherData.js";
 
-weatherData();
+const log = async () => {
+    let city = await weatherData();
+    console.log(city);
+}
+
+log();
