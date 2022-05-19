@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+:root {
+  font-size: 62.5%;
+  color: var(--text-color);
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow: visible;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(lightblue, rgb(0, 98, 255));
+}
+
+h1 {
+  margin: 0;
+  font-size: 6rem;
+  font-weight: normal;
+  letter-spacing: 3px;
+  font-family: 'Odibee Sans';
+}
+
+header {
+  margin: 0 20px 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftHeader {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.location {
+  font-size: 2rem;
+}
+
+.searchButton {
+  border-radius: 5px;
+  transition: color .5s;
+}
+
+.searchButton:hover {
+  background-color: rgba(105, 105, 105, 0.3);
+}
+
+.searchButton:active {
+  background-color: rgb(105, 105, 105, 0.5);
+}
+
+.weatherContainer {
+  font-size: 3rem;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.weatherContainer > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.temp {
+  font-size: 15rem;
+}
+
+.tempContainer:not(.temp) {
+  font-size: 4rem;
+}
+
+.mainContainer {
+  align-items: center;
+  padding: 0 40px 0 40px;
+  gap: 10px;
+  border-left: solid;
+  border-right: solid;
+}
+
+.weatherImageContainer {
+  height: 200px;
+}
+
+.weatherImageContainer img {
+  height: inherit;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
+
+.main {
+  font-size: 4rem;
+  padding: 10px;
+  border-bottom: solid;
+}
+
+.otherContainer {
+  gap: 60px;
+  padding: 10px;
+}
+
+@media (max-width: 900px) {
+  header {
+    display: block;
+  }
+  .leftHeader {
+    justify-content: space-between;
+  }
+  .weatherContainer {
+    flex-direction: column;
+  }
+  .mainContainer {
+    border: none;
+    border-top: solid;
+    border-bottom: solid;
+    padding: 40px;
+  }
+}
