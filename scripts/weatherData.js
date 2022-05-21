@@ -1,4 +1,4 @@
-import { fromUnixTime, format } from "date-fns";
+import { fromUnixTime, parseJSON } from "date-fns";
 
 const getWeatherData = async function (lat, lon) {
     let weatherInfo = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=4f54370f89e09a792c11550fa7f63031&units=imperial`, { mode: 'cors' });
@@ -23,10 +23,10 @@ export default async function FormatweatherData ({lat, lon}) {
         temp: parseInt(temp),
         tempMax: parseInt(temp_max),
         tempMin: parseInt(temp_min),
-        rain,
-        snow,
-        sunrise: format(fromUnixTime(sunrise), 'p'),
-        sunset: format(fromUnixTime(sunset), 'p'),
+        rain: rain ? rain['1h'] : 0,
+        snow: snow ? snow['1h'] : 0,
+        sunrise: parseJSON(fromUnixTime(sunrise)),
+        sunset: parseJSON(fromUnixTime(sunset)),
         windSpeed: speed,
     };
 }

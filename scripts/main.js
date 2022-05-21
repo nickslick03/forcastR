@@ -1,12 +1,13 @@
 import weatherData from "./weatherData.js";
 import { locationFromIp, locationSearch } from "./location.js";
-import populateIndex from "./indexManipulator.js";
+import populateIndex from "./DOMLoader.js";
 
-const main = async () => {
-    let searchLocation = await locationSearch('london', '', 'GB');
-    //let ipLocation = await locationFromIp();
-    let weatherInfo = await weatherData(searchLocation[0]);
-    populateIndex(searchLocation[0], weatherInfo);
+const main = async function () {
+    //let [ location ] = await locationSearch('Philadelphia', 'PA', 'US'); //SEARCH
+    let location = await locationFromIp(); //IP
+    let weatherInfo = await weatherData(location);
+    populateIndex(location, weatherInfo);
+    console.log(weatherInfo);
 };
 
 main();

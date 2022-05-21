@@ -21,25 +21,34 @@
     </header>
     <div class="weatherContainer">
       <div class="tempContainer">
-        <div class="temp"></div>
-        <div>
-          Max: <span class="tempMax"></span>
-        </div>
-        <div>
-          Min: <span class="tempMin"></span>
-        </div>
+        <div class="temp">--°</div>
+        <div class="tempMax">Max: --°</div>
+        <div class="tempMin">Min: --°</div>
       </div>
       <div class="mainContainer">
         <div class="weatherImageContainer">
-          <img src="./images/thunderCloud.png" alt="sun cloud">
+          <img src="./images/sunCloud.png" alt="sun cloud">
         </div>
         <div class="main">Main</div>
         <div class="description">Description</div>
       </div>
       <div class="otherContainer">
-        <div>Rain volume: <span class="rainVolume">0</span> mm</div>
-        <div>Snow volume: <span class="snowVolume">0</span> mm</div>
-        <div>Wind speed: <span class="windSpeed">0</span> mph</div>
+        <div class="cloudPercentage">Cloud Percentage: -- %</div>
+        <div class="rainVolume"></div>
+        <div class="snowVolume"></div>
+        <div class="windSpeed">Wind Speed: -- mph</div>
+      </div>
+    </div>
+    <div class="sunriseSunsetContainer">
+      <div class="currentTime">3:00 PM</div>
+      <div class="bar">
+        <div class="marker sunrise">
+          <div class="text sunrise">Sunrise: 6:00 AM</div>
+        </div>
+        <div class="marker sunset">
+          <div class="text sunset">Sunset: 6:00 PM</div>
+        </div>
+        <div class="sunProgress"></div>
       </div>
     </div>
     <script type="module" src="./scripts/main.js"></script>

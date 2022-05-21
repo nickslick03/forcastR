@@ -12,15 +12,8 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-image: linear-gradient(lightblue, rgb(0, 98, 255));
-}
-
-h1 {
-  margin: 0;
-  font-size: 6rem;
-  font-weight: normal;
-  letter-spacing: 3px;
-  font-family: 'Odibee Sans';
 }
 
 header {
@@ -29,6 +22,14 @@ header {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+}
+
+h1 {
+  margin: 0;
+  font-size: 6rem;
+  font-weight: normal;
+  letter-spacing: 3px;
+  font-family: 'Odibee Sans';
 }
 
 .leftHeader {
@@ -54,9 +55,9 @@ header {
   background-color: rgb(105, 105, 105, 0.5);
 }
 
+
 .weatherContainer {
   font-size: 3rem;
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,7 +71,7 @@ header {
 }
 
 .temp {
-  font-size: 15rem;
+  font-size: 18rem;
 }
 
 .tempContainer:not(.temp) {
@@ -100,12 +101,73 @@ header {
   border-bottom: solid;
 }
 
-.otherContainer {
-  gap: 60px;
-  padding: 10px;
+.otherContainer > div {
+  padding: 20px 0 20px 10px;
 }
 
-@media (max-width: 900px) {
+.otherContainer > div:empty {
+  padding: 0;
+}
+
+.sunriseSunsetContainer {
+  position: relative;
+  margin-bottom: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bar, .sunProgress {
+  z-index: 0;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.sunriseSunsetContainer .bar {
+  position: relative;
+  z-index: 0;
+  width: 80%;
+  background-color: darkgray;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
+}
+
+.sunriseSunsetContainer .sunProgress {
+  height: 20px;
+  background-color: yellow;
+}
+
+.marker {
+  position: absolute;
+  z-index: 1;
+  transform: translate(-50%, -25%);
+  width: 10px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: orangered;
+}
+
+.marker .text{
+  width: max-content;
+  font-size: 2rem;
+  margin-top: 50px;
+  transform: translateX(-50%);
+}
+
+.currentTime {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.sunrise {
+  left: 20%;
+}
+
+.sunset {
+  left: 75%;
+}
+
+@media (max-width: 1000px) {
   header {
     display: block;
   }
@@ -120,5 +182,8 @@ header {
     border-top: solid;
     border-bottom: solid;
     padding: 40px;
+  }
+  .sunriseSunsetContainer {
+    margin-top: 50px;
   }
 }
