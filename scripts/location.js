@@ -11,7 +11,7 @@ export const locationFromIp = async function () {
 };
 
 export const locationSearch = async function (cityName, state, country) {
-    let list = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}${state ? `,${state},` : ''}${country ? country : ''}&limit=5&appid=4f54370f89e09a792c11550fa7f63031`, {mode: 'cors'});
+    let list = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}${state ? `,${state},` : ','}${country ? country : ''}&limit=5&appid=4f54370f89e09a792c11550fa7f63031`, {mode: 'cors'});
     list = await list.json();
     list = list.map( location => {
         delete location.local_names;
