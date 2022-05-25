@@ -1,5 +1,5 @@
 export const locationFromIp = async function () {
-    let ipInfo = await fetch('http://ipinfo.io?token=4e729d8e8a3919', {mode: 'cors'});
+    let ipInfo = await fetch('https://ipinfo.io?token=4e729d8e8a3919', {mode: 'cors'});
     let { city, region, country, loc } = await ipInfo.json();
     return { 
         country,
