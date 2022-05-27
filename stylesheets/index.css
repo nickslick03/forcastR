@@ -13,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-image: linear-gradient(hsl(195, 100%, 90%), hsl(226, 100%, 60%));
+  background-image: linear-gradient(hsl(195, 100%, 90%), hsl(226, 100%, 50%));
 }
 
 header {

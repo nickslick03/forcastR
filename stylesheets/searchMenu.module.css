@@ -1,0 +1,100 @@
+.center {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.backgroundCover {
+    color: black;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.searchMenu {
+    height: 90vh;
+    width: 80vw;
+    max-height: 520px;
+    max-width: 700px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchMenu > h2:first-child {
+    font-size: 3rem;
+}
+
+.searchMenu > h2 {
+    font-size: 2rem;
+}
+
+.invisible {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.visible {
+    opacity: 1;
+}
+
+form {
+    text-align: center;
+}
+
+form > * {
+    margin: 5px;
+    font-family: inherit;
+}
+
+input {
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+.searchButton, .cancelButton {
+    padding: 5px;
+    border: none;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+}
+
+.searchButton:active, .cancelButton:active {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5) inset;
+
+}
+
+.resultsContainer {
+    width: 90%;
+    padding: 5px;
+    flex: 1;
+    font-size: 1.5rem;
+    overflow: auto;
+}
+
+.resultsContainer > button {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    border: none;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.resultsContainer > button:hover {
+    border: black 2px solid;
+    box-sizing: border-box;
+}

@@ -10,12 +10,11 @@ import rainIcon from "../icons/rain.png";
 import snowIcon from"../icons/snow.png";
 import windIcon from "../icons/wind.png";
 
-
 const backgroundImageColors = {
   morning: [265, 100, 36, 34, 100, 50],
-  day: [195, 100, 90, 226, 100, 60],
-  evening: [265, 100, 36, 34, 100, 50],
-  night: [270, 100, 20, 240, 100, 10],
+  day: [195, 100, 90, 230, 100, 50],
+  evening: [265, 100, 30, 34, 100, 50],
+  night: [270, 100, 30, 240, 100, 10],
 };
 
 const index = {
@@ -67,7 +66,8 @@ const loadVisuals = async function (weather) {
   index.markerSunset.style.left = `${timeToPercent(weather.sunset)}%`;
   index.sunProgress.style.width = `${timeToPercent(new Date())}%`;
   const { name, icon } = await getIcon(weather, timeWord);
-  index.weatherIcon.setAttribute('src', icon);
+  icon;
+  index.weatherIcon.src = icon;
   index.weatherIcon.setAttribute('alt', name);
 };
 
